@@ -1,0 +1,14 @@
+{% if categoria == "Imposible" %}
+  <h2>{{ categoria }}</h2>
+  <p>{{ explicacion }}</p>
+{% else %}
+  <h2>{{ categoria }}</h2>
+  <p>{{ explicacion }}</p>
+  <p><strong>Objetivo:</strong> {{ objetivo }}</p>
+  <p><strong>Intensidad recomendada:</strong> {{ intensidad }}</p>
+  <p><strong>Probabilidad estimada de éxito:</strong> {{ puntuacion }}%</p>
+  <h3>Recomendaciones:</h3>
+  <ul>
+      <li>{{ recomendacion_extra }}</li>
+  </ul>
+{% endif %}
