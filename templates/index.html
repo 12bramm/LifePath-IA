@@ -1,13 +1,82 @@
 <!DOCTYPE html>
-<html>
-<head><title>LifePath IA</title></head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>LifePath IA 🚀</title>
+    <style>
+        /* Fondo y tipografía */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Tarjeta central */
+        .card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 350px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Inputs estilizados */
+        input[type="number"], input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        /* Botón estilizado */
+        button {
+            background-color: #6c63ff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin-top: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #5750d6;
+        }
+
+        /* Footer pequeño */
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+</head>
 <body>
-    <h1>LifePath IA 🚀</h1>
-    <form method="POST">
-        Edad: <input type="number" name="edad" required><br><br>
-        Objetivo: <input type="text" name="objetivo" required><br><br>
-        Horas semanales: <input type="number" name="tiempo" required><br><br>
-        <button type="submit">Generar Plan</button>
-    </form>
+    <div class="card">
+        <h1>LifePath IA 🚀</h1>
+        <form method="POST">
+            <input type="number" name="edad" placeholder="Edad" required><br>
+            <input type="text" name="objetivo" placeholder="Objetivo" required><br>
+            <input type="number" name="tiempo" placeholder="Horas semanales" required><br>
+            <button type="submit">Generar Plan</button>
+        </form>
+        <div class="footer">
+            © 2026 LifePath IA
+        </div>
+    </div>
 </body>
 </html>
