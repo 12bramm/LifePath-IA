@@ -8,7 +8,7 @@ app = Flask(__name__)
 with open("conocimientos.json", "r") as f:
     conocimientos = json.load(f)
 
-# Crear pipeline de Hugging Face para generación de texto
+# Pipeline de Hugging Face para generación de texto
 generator = pipeline("text-generation", model="distilgpt2")
 
 @app.route("/", methods=["GET", "POST"])
@@ -19,11 +19,11 @@ def inicio():
         tiempo = int(request.form["tiempo"])
         objetivo_lower = objetivo.lower()
 
-        # Clasificación con razonamiento
+        # Clasificación del objetivo
         if any(palabra in objetivo_lower for palabra in conocimientos["objetivos_imposibles"]):
             categoria = "Imposible"
             explicacion = generator(
-                f"Explica por qué '{objetivo}' es imposible:",
+                f"Explica de manera clara por qué '{objetivo}' es imposible:",
                 max_length=60,
                 do_sample=True
             )[0]["generated_text"]
@@ -41,7 +41,7 @@ def inicio():
         elif any(palabra in objetivo_lower for palabra in conocimientos["objetivos_realistas"]):
             categoria = "Realista"
             explicacion = generator(
-                f"Explica cómo lograr '{objetivo}' de manera realista:",
+                f"Explica cómo lograr '{objetivo}' de manera realista y segura:",
                 max_length=100,
                 do_sample=True
             )[0]["generated_text"]
@@ -62,6 +62,7 @@ def inicio():
         else:
             intensidad = "Progreso rápido e intensivo"
 
+        # Recomendación según edad
         if edad < 18:
             recomendacion_extra = "Aprovecha tu etapa de aprendizaje rápido."
         else:
